@@ -1,0 +1,6 @@
+{
+  "name": "Digital Marketer Portfolio",
+  "description": "Premium portfolio and content management system for a professional digital marketing specialist.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

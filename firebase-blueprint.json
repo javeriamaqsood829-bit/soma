@@ -1,0 +1,246 @@
+{
+  "entities": {
+    "siteSettings": {
+      "title": "Site Settings",
+      "description": "Global portfolio settings, branding, appearance, and contact information",
+      "type": "object",
+      "properties": {
+        "brandName": { "type": "string", "maxLength": 100 },
+        "ownerName": { "type": "string", "maxLength": 100 },
+        "professionalTitle": { "type": "string", "maxLength": 150 },
+        "email": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "whatsapp": { "type": "string", "maxLength": 50 },
+        "location": { "type": "string", "maxLength": 100 },
+        "shortBio": { "type": "string", "maxLength": 500 },
+        "cvUrl": { "type": "string", "maxLength": 500 },
+        "profileImage": { "type": "string", "maxLength": 500 },
+        "primaryAccent": { "type": "string", "maxLength": 20 },
+        "secondaryAccent": { "type": "string", "maxLength": 20 },
+        "backgroundColor": { "type": "string", "maxLength": 20 },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["brandName", "ownerName"]
+    },
+    "hero": {
+      "title": "Hero Section",
+      "description": "Hero section content and CTAs",
+      "type": "object",
+      "properties": {
+        "badge": { "type": "string", "maxLength": 100 },
+        "mainHeading": { "type": "string", "maxLength": 200 },
+        "highlightedHeading": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 600 },
+        "profileImage": { "type": "string", "maxLength": 500 },
+        "primaryCtaText": { "type": "string", "maxLength": 50 },
+        "primaryCtaLink": { "type": "string", "maxLength": 200 },
+        "secondaryCtaText": { "type": "string", "maxLength": 50 },
+        "secondaryCtaLink": { "type": "string", "maxLength": 200 },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["badge", "mainHeading", "description"]
+    },
+    "about": {
+      "title": "About Section",
+      "description": "About me profile and statistics",
+      "type": "object",
+      "properties": {
+        "heading": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "approach": { "type": "string", "maxLength": 1000 },
+        "profileImage": { "type": "string", "maxLength": 500 },
+        "cvUrl": { "type": "string", "maxLength": 500 },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["heading", "description"]
+    },
+    "service": {
+      "title": "Service",
+      "description": "Digital marketing service item",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "slug": { "type": "string", "maxLength": 100 },
+        "shortDescription": { "type": "string", "maxLength": 300 },
+        "fullDescription": { "type": "string", "maxLength": 1500 },
+        "icon": { "type": "string", "maxLength": 50 },
+        "displayOrder": { "type": "number" },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "shortDescription", "published"]
+    },
+    "process": {
+      "title": "Process Step",
+      "description": "Marketing workflow step",
+      "type": "object",
+      "properties": {
+        "stepNumber": { "type": "string", "maxLength": 10 },
+        "title": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 500 },
+        "displayOrder": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["stepNumber", "title", "description"]
+    },
+    "skill": {
+      "title": "Skill",
+      "description": "Technical or creative marketing capability",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 50 },
+        "percentage": { "type": "number" },
+        "icon": { "type": "string", "maxLength": 50 },
+        "displayOrder": { "type": "number" },
+        "published": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "category", "percentage", "published"]
+    },
+    "experience": {
+      "title": "Experience",
+      "description": "Career position in digital marketing",
+      "type": "object",
+      "properties": {
+        "company": { "type": "string", "maxLength": 150 },
+        "position": { "type": "string", "maxLength": 150 },
+        "employmentType": { "type": "string", "maxLength": 50 },
+        "startDate": { "type": "string", "maxLength": 50 },
+        "endDate": { "type": "string", "maxLength": 50 },
+        "location": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 1500 },
+        "logoUrl": { "type": "string", "maxLength": 500 },
+        "displayOrder": { "type": "number" },
+        "published": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["company", "position", "startDate", "published"]
+    },
+    "project": {
+      "title": "Project",
+      "description": "Portfolio project and case study",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "slug": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 50 },
+        "client": { "type": "string", "maxLength": 150 },
+        "date": { "type": "string", "maxLength": 50 },
+        "shortDescription": { "type": "string", "maxLength": 400 },
+        "fullDescription": { "type": "string", "maxLength": 3000 },
+        "challenge": { "type": "string", "maxLength": 1500 },
+        "strategy": { "type": "string", "maxLength": 1500 },
+        "solution": { "type": "string", "maxLength": 1500 },
+        "results": { "type": "string", "maxLength": 1500 },
+        "coverImage": { "type": "string", "maxLength": 500 },
+        "projectUrl": { "type": "string", "maxLength": 500 },
+        "caseStudyUrl": { "type": "string", "maxLength": 500 },
+        "featured": { "type": "boolean" },
+        "published": { "type": "boolean" },
+        "displayOrder": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "slug", "category", "shortDescription", "published"]
+    },
+    "result": {
+      "title": "Result Metric",
+      "description": "Growth metric or key marketing achievement",
+      "type": "object",
+      "properties": {
+        "number": { "type": "string", "maxLength": 20 },
+        "prefix": { "type": "string", "maxLength": 10 },
+        "suffix": { "type": "string", "maxLength": 10 },
+        "label": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 300 },
+        "icon": { "type": "string", "maxLength": 50 },
+        "displayOrder": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["number", "label"]
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "description": "Client review and testimonial",
+      "type": "object",
+      "properties": {
+        "clientName": { "type": "string", "maxLength": 100 },
+        "clientPosition": { "type": "string", "maxLength": 100 },
+        "company": { "type": "string", "maxLength": 100 },
+        "avatarUrl": { "type": "string", "maxLength": 500 },
+        "rating": { "type": "number" },
+        "quote": { "type": "string", "maxLength": 1500 },
+        "featured": { "type": "boolean" },
+        "published": { "type": "boolean" },
+        "displayOrder": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["clientName", "quote", "published"]
+    },
+    "message": {
+      "title": "Contact Message",
+      "description": "Public contact inquiry submitted to admin inbox",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "company": { "type": "string", "maxLength": 100 },
+        "service": { "type": "string", "maxLength": 100 },
+        "budget": { "type": "string", "maxLength": 50 },
+        "message": { "type": "string", "maxLength": 3000 },
+        "status": { "type": "string", "enum": ["unread", "read", "replied", "archived"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "email", "message", "status"]
+    }
+  },
+  "firestore": {
+    "/siteSettings/{settingId}": {
+      "schema": "siteSettings",
+      "description": "Global portfolio configuration documents"
+    },
+    "/hero/{heroId}": {
+      "schema": "hero",
+      "description": "Hero section content documents"
+    },
+    "/about/{aboutId}": {
+      "schema": "about",
+      "description": "About section content documents"
+    },
+    "/services/{serviceId}": {
+      "schema": "service",
+      "description": "Individual marketing services offered"
+    },
+    "/process/{processId}": {
+      "schema": "process",
+      "description": "Six-step digital marketing process items"
+    },
+    "/skills/{skillId}": {
+      "schema": "skill",
+      "description": "Digital marketing skills, creative competencies, and tools"
+    },
+    "/experience/{experienceId}": {
+      "schema": "experience",
+      "description": "Work experience timeline entries"
+    },
+    "/projects/{projectId}": {
+      "schema": "project",
+      "description": "Portfolio projects and case studies"
+    },
+    "/results/{resultId}": {
+      "schema": "result",
+      "description": "Quantifiable growth statistics and conversion metrics"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "testimonial",
+      "description": "Client reviews and testimonials"
+    },
+    "/messages/{messageId}": {
+      "schema": "message",
+      "description": "Inbound client contact inquiries"
+    }
+  }
+}
