@@ -54,9 +54,9 @@ export const Projects: React.FC<ProjectsProps> = ({ onLearnMore }) => {
   return (
     <section
       id="projects"
-      className="relative min-h-[90vh] md:min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden pt-24 pb-12 px-6 sm:px-12 select-none"
+      className="relative py-20 md:py-28 bg-black text-white overflow-hidden px-4 sm:px-8 lg:px-12 border-t border-neutral-900/60"
     >
-      <div className="flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full my-auto py-6 z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         
         {/* Section Headline matching slide aesthetic */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
@@ -182,26 +182,6 @@ export const Projects: React.FC<ProjectsProps> = ({ onLearnMore }) => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Learn More Button */}
-        <div className="mt-8 flex justify-start">
-          <LearnMoreButton
-            text="View Client Reviews"
-            onClick={handleAction}
-            ariaLabel="Explore verified testimonials and client reviews"
-          />
-        </div>
-      </div>
-
-      {/* Slide Footer */}
-      <div className="w-full max-w-7xl mx-auto flex items-end justify-between relative z-20 pt-4 border-t border-neutral-900/60">
-        <div className="relative -ml-2 -mb-6">
-          <HalftonePattern dotColor="#FFA500" className="w-24 h-24 sm:w-32 sm:h-32" />
-        </div>
-
-        <div className="text-right text-xs text-neutral-400 font-mono">
-          <span className="text-white font-bold">{siteSettings.ownerName || 'Javeria Maqsood'}</span> • Case Studies & Projects
         </div>
       </div>
     </section>

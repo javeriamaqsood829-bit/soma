@@ -57,16 +57,16 @@ export const Services: React.FC<ServicesProps> = ({ onLearnMore, onContact }) =>
   return (
     <section
       id="services"
-      className="relative min-h-[90vh] md:min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden pt-24 pb-12 px-6 sm:px-12 select-none"
+      className="relative py-20 md:py-28 bg-black text-white overflow-hidden px-4 sm:px-8 lg:px-12 border-t border-neutral-900/60"
     >
-      <div className="flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full my-auto py-6">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         
-        {/* Section Headline matching reference slide: "WHAT I OFFER" */}
+        {/* Section Headline matching reference: "WHAT I OFFER" */}
         <div className="mb-10 sm:mb-14 text-left">
           <span className="text-xs uppercase tracking-widest text-[#FFA500] font-bold block mb-2">
-            10 Strategic Solutions
+            Strategic Marketing Services
           </span>
-          <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white inline-block relative">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white inline-block relative">
             WHAT I <span className="text-[#FFA500]">OFFER</span>
             <div className="h-1 w-24 sm:w-32 bg-[#FFA500] mt-2 rounded-full" />
           </h2>
@@ -107,17 +107,6 @@ export const Services: React.FC<ServicesProps> = ({ onLearnMore, onContact }) =>
             onClick={handleAction}
             ariaLabel="Explore Digital Marketing Strategy & Execution Process"
           />
-        </div>
-      </div>
-
-      {/* Slide Footer */}
-      <div className="w-full max-w-7xl mx-auto flex items-end justify-between relative z-20 pt-4 border-t border-neutral-900/60">
-        <div className="relative -ml-2 -mb-6">
-          <HalftonePattern dotColor="#FFA500" className="w-24 h-24 sm:w-32 sm:h-32" />
-        </div>
-
-        <div className="text-right text-xs text-neutral-400 font-mono">
-          <span className="text-white font-bold">{siteSettings.ownerName || 'Javeria Maqsood'}</span> • What I Offer
         </div>
       </div>
 

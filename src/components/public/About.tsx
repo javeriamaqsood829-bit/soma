@@ -23,9 +23,9 @@ export const About: React.FC<AboutProps> = ({ onLearnMore }) => {
   return (
     <section
       id="about"
-      className="relative min-h-[90vh] md:min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden pt-24 pb-12 px-6 sm:px-12 select-none"
+      className="relative py-20 md:py-28 bg-black text-white overflow-hidden px-4 sm:px-8 lg:px-12 border-t border-neutral-900/60"
     >
-      <div className="flex-1 flex items-center justify-center w-full max-w-7xl mx-auto my-auto relative z-10 py-6">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
           
           {/* Left Column: Heading, Subhead, Story, Stats & CV */}
@@ -80,18 +80,24 @@ export const About: React.FC<AboutProps> = ({ onLearnMore }) => {
 
             {/* Action Buttons Row */}
             <div className="flex flex-wrap items-center gap-4">
-              <LearnMoreButton
-                text="Explore Services"
-                onClick={handleAction}
-                ariaLabel="Explore Digital Marketing Services"
-              />
+              <a
+                href="#services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFA500] text-black font-extrabold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg shadow-[#FFA500]/20 transition-all hover:scale-105"
+              >
+                <span>Explore Services</span>
+                <TrendingUp className="w-4 h-4" />
+              </a>
 
               {about.cvUrl && (
                 <a
                   href={about.cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-neutral-950 border border-neutral-800 hover:border-[#FFA500] text-neutral-300 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-neutral-950 border border-neutral-800 hover:border-[#FFA500] text-neutral-300 hover:text-white text-xs font-bold uppercase tracking-wider transition-colors"
                 >
                   <Download className="w-3.5 h-3.5 text-[#FFA500]" />
                   <span>Download CV</span>
@@ -127,17 +133,6 @@ export const About: React.FC<AboutProps> = ({ onLearnMore }) => {
             </div>
           </div>
 
-        </div>
-      </div>
-
-      {/* Slide Footer */}
-      <div className="w-full max-w-7xl mx-auto flex items-end justify-between relative z-20 pt-4 border-t border-neutral-900/60">
-        <div className="relative -ml-2 -mb-6">
-          <HalftonePattern dotColor="#FFA500" className="w-24 h-24 sm:w-32 sm:h-32" />
-        </div>
-
-        <div className="text-right text-xs text-neutral-400 font-mono">
-          <span className="text-white font-bold">{siteSettings.ownerName || 'Javeria Maqsood'}</span> • Digital Marketing
         </div>
       </div>
     </section>

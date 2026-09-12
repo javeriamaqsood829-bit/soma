@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onLearnMore, onStartProject }) => {
   return (
     <section
       id="hero"
-      className="relative min-h-[95vh] md:min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden pt-28 pb-12 px-4 sm:px-8 lg:px-12 select-none"
+      className="relative min-h-[85vh] md:min-h-[90vh] bg-black text-white flex flex-col justify-center overflow-hidden pt-32 pb-20 px-4 sm:px-8 lg:px-12"
     >
       {/* Warm Ambient Glow behind subject */}
       <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-[#FFA500]/15 rounded-full blur-[140px] pointer-events-none" />
@@ -156,18 +156,6 @@ export const Hero: React.FC<HeroProps> = ({ onLearnMore, onStartProject }) => {
 
         </div>
 
-      </div>
-
-      {/* Slide Footer Elements (Halftone on left, URL and brand details on right) */}
-      <div className="w-full max-w-7xl mx-auto flex items-end justify-between relative z-20 pt-6 border-t border-neutral-900/60 mt-8">
-        <div className="relative -ml-2 -mb-6">
-          <HalftonePattern dotColor="#FFA500" className="w-24 h-24 sm:w-32 sm:h-32" />
-        </div>
-
-        <div className="text-right text-xs text-neutral-400 font-mono space-y-0.5">
-          <p className="text-white font-bold">{siteSettings.ownerName || 'Javeria Maqsood'}</p>
-          <p className="text-[#FFA500] text-[11px]">javeriamaqsood829@gmail.com</p>
-        </div>
       </div>
     </section>
   );

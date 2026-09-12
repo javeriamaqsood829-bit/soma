@@ -1,75 +1,73 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar } from './Navbar';
-import { SlideDeckViewer } from './SlideDeckViewer';
 import { Hero } from './Hero';
+import { ResultsBar } from './ResultsBar';
 import { About } from './About';
 import { Services } from './Services';
+import { Process } from './Process';
 import { Skills } from './Skills';
 import { Experience } from './Experience';
 import { EducationCertifications } from './EducationCertifications';
 import { Projects } from './Projects';
 import { Testimonials } from './Testimonials';
+import { CallToAction } from './CallToAction';
 import { Contact } from './Contact';
-import { ThankYouSlide } from './ThankYouSlide';
-import { CaseStudyModal } from './CaseStudyModal';
 import { Footer } from './Footer';
+import { CaseStudyModal } from './CaseStudyModal';
 
 interface PublicPortfolioProps {
   onNavigateToAdmin: () => void;
 }
 
 export const PublicPortfolio: React.FC<PublicPortfolioProps> = ({ onNavigateToAdmin }) => {
-  // viewMode defaults to 'deck' to present the exact 10 slide deck from user samples
-  const [viewMode, setViewMode] = useState<'deck' | 'scroll'>('deck');
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-
-  const toggleViewMode = () => {
-    setViewMode((prev) => (prev === 'deck' ? 'scroll' : 'deck'));
-  };
-
-  const handleNavigateToSlide = (index: number) => {
-    setCurrentSlideIndex(index);
-    if (viewMode !== 'deck') {
-      setViewMode('deck');
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-black text-neutral-100 selection:bg-[#FFA500] selection:text-black font-sans antialiased">
-      {/* Top Navigation Bar matching the sample presentation header */}
-      <Navbar
-        viewMode={viewMode}
-        onToggleViewMode={toggleViewMode}
-        onNavigateToSlide={handleNavigateToSlide}
-        onNavigateToAdmin={onNavigateToAdmin}
-      />
+    <div className="min-h-screen bg-black text-neutral-100 selection:bg-[#FFA500] selection:text-black font-sans antialiased scroll-smooth">
+      {/* Top Sticky Navigation Bar */}
+      <Navbar onNavigateToAdmin={onNavigateToAdmin} />
 
-      {/* Main Content Area */}
-      {viewMode === 'deck' ? (
-        <main className="w-full">
-          <SlideDeckViewer
-            currentSlideIndex={currentSlideIndex}
-            onSlideChange={setCurrentSlideIndex}
-            onNavigateToAdmin={onNavigateToAdmin}
-          />
-        </main>
-      ) : (
-        <main className="w-full divide-y divide-neutral-900/50">
-          <Hero />
-          <About />
-          <Services />
-          <Skills />
-          <Experience />
-          <EducationCertifications />
-          <Projects />
-          <Testimonials />
-          <Contact />
-          <ThankYouSlide />
-          <Footer onNavigateToAdmin={onNavigateToAdmin} />
-        </main>
-      )}
+      {/* Complete Scrolling Website Main Layout */}
+      <main className="w-full">
+        {/* 1. Hero / Introduction */}
+        <Hero />
 
-      {/* Case Study Detail Modal for project deep-dives */}
+        {/* 2. Key Quantifiable Marketing Results */}
+        <ResultsBar />
+
+        {/* 3. About Me & Personal Strategy */}
+        <About />
+
+        {/* 4. Strategic Services & Offerings */}
+        <Services />
+
+        {/* 5. 6-Step Digital Marketing Process */}
+        <Process />
+
+        {/* 6. Core Skills, Technologies & Tools */}
+        <Skills />
+
+        {/* 7. Professional Work Experience */}
+        <Experience />
+
+        {/* 8. Education & Industry Certifications */}
+        <EducationCertifications />
+
+        {/* 9. Featured Client Projects & Case Studies */}
+        <Projects />
+
+        {/* 10. Client Testimonials & Endorsements */}
+        <Testimonials />
+
+        {/* 11. High-Impact Call To Action */}
+        <CallToAction />
+
+        {/* 12. Contact & Consultation Booking Form */}
+        <Contact />
+      </main>
+
+      {/* Website Footer */}
+      <Footer onNavigateToAdmin={onNavigateToAdmin} />
+
+      {/* Case Study Deep-Dive Modal */}
       <CaseStudyModal />
     </div>
   );

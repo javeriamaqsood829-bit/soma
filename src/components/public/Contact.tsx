@@ -83,19 +83,19 @@ export const Contact: React.FC<ContactProps> = ({ onLearnMore }) => {
   return (
     <section
       id="contact"
-      className="relative min-h-[90vh] md:min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden pt-24 pb-12 px-6 sm:px-12 select-none"
+      className="relative py-20 md:py-28 bg-black text-white overflow-hidden px-4 sm:px-8 lg:px-12 border-t border-neutral-900/60"
     >
-      <div className="flex-1 flex items-center justify-center max-w-7xl mx-auto w-full my-auto py-6 z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
           
           {/* Left Column: Heading, Paragraph, Quick Contacts */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Title matching Slide 2 aesthetic */}
+            {/* Title */}
             <span className="text-xs uppercase tracking-widest text-[#FFA500] font-bold block mb-2">
               Start Your Growth Campaign
             </span>
-            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-tight mb-6">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white leading-tight mb-6">
               LET'S WORK <span className="text-[#FFA500]">TOGETHER</span>
             </h2>
 
@@ -130,13 +130,16 @@ export const Contact: React.FC<ContactProps> = ({ onLearnMore }) => {
               </div>
             </div>
 
-            {/* Signature Button */}
+            {/* Action CTA Button */}
             <div>
-              <LearnMoreButton
-                text="Submit Growth Brief"
-                onClick={handleAction}
-                ariaLabel="Collaborate with Javeria Maqsood on a marketing campaign"
-              />
+              <button
+                type="button"
+                onClick={() => setShowInquiryModal(true)}
+                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-gradient-to-r from-[#FFA500] to-[#FF8C00] text-black font-extrabold text-xs uppercase tracking-wider hover:brightness-110 shadow-xl shadow-[#FFA500]/25 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                <span>Send Project Inquiry</span>
+                <Send className="w-4 h-4" />
+              </button>
             </div>
           </div>
 
@@ -146,21 +149,10 @@ export const Contact: React.FC<ContactProps> = ({ onLearnMore }) => {
               <img
                 src={hero.profileImage || siteSettings.profileImage}
                 alt="Javeria Maqsood Digital Marketer"
-                className="w-full h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.85)] max-h-[52vh]"
+                className="w-full h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.85)] max-h-[50vh]"
               />
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Slide Footer */}
-      <div className="w-full max-w-7xl mx-auto flex items-end justify-between relative z-20 pt-4 border-t border-neutral-900/60">
-        <div className="relative -ml-2 -mb-6">
-          <HalftonePattern dotColor="#FFA500" className="w-24 h-24 sm:w-32 sm:h-32" />
-        </div>
-
-        <div className="text-right text-xs text-neutral-400 font-mono">
-          <span className="text-white font-bold">{siteSettings.ownerName || 'Javeria Maqsood'}</span> • Connect & Collaborate
         </div>
       </div>
 

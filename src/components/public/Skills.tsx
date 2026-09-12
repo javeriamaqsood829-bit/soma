@@ -35,17 +35,17 @@ export const Skills: React.FC<SkillsProps> = ({ onLearnMore }) => {
   return (
     <section
       id="skills"
-      className="relative min-h-[90vh] md:min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden pt-24 pb-12 px-6 sm:px-12 select-none"
+      className="relative py-20 md:py-28 bg-black text-white overflow-hidden px-4 sm:px-8 lg:px-12 border-t border-neutral-900/60"
     >
-      <div className="flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full my-auto py-6 z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         
         {/* Section Headline matching slide aesthetic */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
             <span className="text-xs uppercase tracking-widest text-[#FFA500] font-bold block mb-2">
-              Expertise & Tech Stack
+              Expertise & Marketing Stack
             </span>
-            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white inline-block relative">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white inline-block relative">
               CORE <span className="text-[#FFA500]">SKILLS</span>
               <div className="h-1 w-24 sm:w-32 bg-[#FFA500] mt-2 rounded-full" />
             </h2>
@@ -194,26 +194,6 @@ export const Skills: React.FC<SkillsProps> = ({ onLearnMore }) => {
             ))}
           </div>
         )}
-
-        {/* Learn More Button */}
-        <div className="flex justify-start">
-          <LearnMoreButton
-            text="View Work Experience"
-            onClick={handleAction}
-            ariaLabel="Explore professional marketing career history"
-          />
-        </div>
-      </div>
-
-      {/* Slide Footer */}
-      <div className="w-full max-w-7xl mx-auto flex items-end justify-between relative z-20 pt-4 border-t border-neutral-900/60">
-        <div className="relative -ml-2 -mb-6">
-          <HalftonePattern dotColor="#FFA500" className="w-24 h-24 sm:w-32 sm:h-32" />
-        </div>
-
-        <div className="text-right text-xs text-neutral-400 font-mono">
-          <span className="text-white font-bold">{siteSettings.ownerName || 'Javeria Maqsood'}</span> • Professional Capabilities
-        </div>
       </div>
     </section>
   );
